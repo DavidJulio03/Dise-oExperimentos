@@ -1,0 +1,44 @@
+================================================================================
+REGISTRO DE EJECUCIÓN DEL SISTEMA DE ANÁLISIS ESTADÍSTICO
+================================================================================
+Fecha y hora de inicio: 2026-11-16 01:21:26
+Fecha y hora de cierre: 2026-11-16 01:21:39
+Duración total:         13.34 segundos
+
+METADATOS DE ENTRADA Y AMBIENTE:
+--------------------------------------------------
+- Archivo de Entrada: C:\Users\XSayP\OneDrive\Desktop\DiseñoExperimentos\Datos Anova Factorial.xlsx
+- Hoja Procesada: Datos
+- Registros: 27
+- Tipo de Diseño: FACTORIAL_DOS_VIAS
+- Figuras Generadas: 16
+
+EVENTOS Y PROCEDIMIENTOS REGISTRADOS:
+--------------------------------------------------------------------------------
+FECHA/HORA           NIVEL      PROCEDIMIENTO             MENSAJE
+--------------------------------------------------------------------------------
+2026-11-16 01:21:28  INFO       ORQUESTADOR               Iniciando ejecución del pipeline. Archivo objetivo: Datos Anova Factorial.xlsx
+2026-11-16 01:21:28  INFO       CARGA_DATOS               Cargando hoja 'Datos' desde archivo 'Datos Anova Factorial.xlsx'
+2026-11-16 01:21:28  INFO       CARGA_DATOS               Datos cargados y normalizados con éxito: 27 filas, 10 columnas canónicas.
+2026-11-16 01:21:28  INFO       VALIDACION_DATOS          Iniciando auditoría de integridad y validación de datos...
+2026-11-16 01:21:28  INFO       VALIDACION_DATOS          Control de calidad y validación superado al 100% sin anomalías.
+2026-11-16 01:21:28  INFO       IDENTIFICACION_DISENO     Patrón factorial inequívoco detectado en 'Tratamiento' (Formato AiBj). Descomponiendo en Factor_A (Deslizador) y Factor_B (Colgante).
+2026-11-16 01:21:28  INFO       ANALISIS_DESCRIPTIVO      Calculando estadísticas descriptivas generales y por tratamiento...
+2026-11-16 01:21:28  INFO       ANALISIS_DESCRIPTIVO      Estadísticas calculadas: 7 variables cuantitativas, 9 tratamientos.
+2026-11-16 01:21:28  INFO       AJUSTE_ANOVA              Ajustando modelo factorial OLS: a_experimental ~ C(Factor_A) + C(Factor_B) + C(Factor_A):C(Factor_B)
+2026-11-16 01:21:28  INFO       AJUSTE_ANOVA              ANOVA ajustado con éxito. R² = 0.99994
+2026-11-16 01:21:28  INFO       DIAGNOSTICO_SUPUESTOS     Iniciando evaluación completa de supuestos del modelo ANOVA...
+2026-11-16 01:21:28  INFO       DIAGNOSTICO_SUPUESTOS     Diagnóstico de atípicos: 1 observaciones señaladas (|r_std| > 2.5 o IQR). Se conservan íntegramente en el análisis principal.
+2026-11-16 01:21:28  INFO       POST_HOC                  Determinando necesidad y alcance de comparaciones post-hoc...
+2026-11-16 01:21:28  INFO       POST_HOC                  INTERACCIÓN SIGNIFICATIVA: Dado que la interacción C(Factor_A):C(Factor_B) resultó estadísticamente significativa (p = 1.03101e-21 < 0.05), los efectos principales no son aditivos. Por consiguiente, se ejecutan comparaciones post-hoc sobre los tratamientos combinados para identificar qué celdas difieren entre sí.
+2026-11-16 01:21:29  INFO       COMPARACION_TEORICA       Ejecutando análisis de comparación emparejada: a_experimental vs a_teorica...
+2026-11-16 01:21:29  INFO       COMPARACION_TEORICA       Métricas calculadas: MAE = 0.0518, RMSE = 0.0552, Bias = -0.0518, MAPE = 3.47%.
+2026-11-16 01:21:29  INFO       COMPARACION_TEORICA       Concordancia Bland-Altman: 100.0% puntos dentro de LoA.
+2026-11-16 01:21:29  INFO       GENERADOR_GRAFICAS        Iniciando generación de figuras científicas a 300 DPI...
+2026-11-16 01:21:39  INFO       GENERADOR_GRAFICAS        Se generaron exitosamente 16 figuras de alta resolución.
+2026-11-16 01:21:39  INFO       REPORTING                 Libro generado: resumen_descriptivo.xlsx
+2026-11-16 01:21:39  INFO       REPORTING                 Libro generado: resultados_anova.xlsx
+2026-11-16 01:21:39  INFO       REPORTING                 Libro generado: comparacion_aceleraciones.xlsx
+2026-11-16 01:21:39  INFO       REPORTING                 Informe estadístico generado: informe_estadistico.md
+2026-11-16 01:21:39  INFO       ORQUESTADOR               Pipeline completado exitosamente en 11.39 segundos.
+================================================================================
